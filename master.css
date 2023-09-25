@@ -19,6 +19,11 @@ nav {
     justify-content: space-between;
     padding: 30px;
 }
+::selection{
+background: #b167e5  ;
+  color: white;
+  
+}
 .hero{
   background-image: url("IMG_20230924_012008.png");
   background-position: center;
