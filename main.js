@@ -2,10 +2,8 @@ let menu = document.getElementById("menu");
 let links = document.getElementById("links");
 
 menu.onclick = function () {
-  links.classList.toggle("open")
-;
-    menu.classList.toggle("active")
-;
+  links.classList.toggle("open");
+    menu.classList.toggle("active");
 }
 
 let scroll = document.querySelector('.scroll');
@@ -45,25 +43,9 @@ function checkScroll() {
 window.addEventListener('scroll', checkScroll);
 window.addEventListener('load', checkScroll);
 
-//<![CDATA[
-    document.oncontextmenu = function() {
-    return false;
-    };
-    document.onkeydown = function(e) {
-    if (e.keyCode == 123) {
-    return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode ==  I .charCodeAt(0)) {
-    return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode ==  J .charCodeAt(0)) {
-    return false;
-    }
-    if (e.ctrlKey && e.keyCode ==  U .charCodeAt(0)) {
-    return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode ==  C .charCodeAt(0)) {
-    return false;
-    }
-    }
-    //]]>
+let dark = document.getElementById("dark");
+let body = document.querySelector("body");
+
+  dark.addEventListener('click', function(){
+  body.classList.toggle("dark");
+})
