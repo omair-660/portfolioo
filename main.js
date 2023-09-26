@@ -6,6 +6,19 @@ menu.onclick = function () {
     menu.classList.toggle("active");
 }
 
+function progressBarScroll() {
+  let scrollTop = document.documentElement.scrollTop;
+
+  height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+  scrolled = (scrollTop / height) * 100;
+
+  console.log(document.documentElement.scrollHeight);
+  console.log(document.documentElement.clientHeight);
+
+  document.getElementById("progressBar").style.width = scrolled + "%";
+}
+
 let scroll = document.querySelector('.scroll');
 
 window.onscroll = function(){
@@ -25,6 +38,7 @@ const about = document.querySelector('.about');
   } else {
     about.classList.remove('scrolled');
   }
+    progressBarScroll();
 }
 const boxes = document.querySelectorAll('.box');
 
@@ -46,7 +60,7 @@ window.addEventListener('load', checkScroll);
 let dark = document.getElementById("dark");
 let body = document.querySelector("body");
 
-  dark.addEventListener('click', function(){
+  dark.addEventListener('click', function darkMode(darkMode){
   body.classList.toggle("dark");
 })
 
@@ -81,6 +95,7 @@ function writeWork() {
 setInterval(function () {
   writeWork();
 },411 )
+
 
 document.oncontextmenu = function() {
 return false;

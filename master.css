@@ -46,11 +46,20 @@ nav {
   border-radius:19% 81% 34% 66% / 65% 59% 41% 35%;
 }
 */
+  width: 100%;
+  overflow: hidden;
 }
 .hero svg{
   position: absolute;
   top: 50%;
-  z-index: -8
+  z-index: -8;
+  overflow: hidden;
+}
+@media (max-width:767px) {
+  .hero svg{
+    height: 100%;
+    width:%;
+  }
 }
 .links a {
     text-decoration: none;
@@ -226,8 +235,8 @@ nav {
 @media (max-width:767px) {
   .landing h1 {
    color: var(--res-color);
-   background: var(--bch-color);
-   padding: var(--padd-color);
+
+
    border-radius: 10px;
   }
 .landing h4{
@@ -679,7 +688,9 @@ padding: 14px 0px 14px 10px;
     cursor: ;
     transition: 0.5s;
     overflow: hidden;
+
 }
+
 .project .image img {
     width: 100%;
     height: 100%;
@@ -808,6 +819,20 @@ button#dark {
 .pra-light{
   color: #eee
 }
+.progress-contaner{
+  position: fixed;
+  top:0;
+  background: #ddd;
+  width: 100%;
+  height: 10px;
+  z-index: 8888;
+}
+.progress-contaner .progress-bar{
+  background-image: var(--progress-color);
+  height: 10px;
+  border-bottom-right-radius: 22px;
+  border-top-right-radius: 22px;
+}
 :root{
   --h1-color:#222;
   --bk-color:#fff;
@@ -826,6 +851,7 @@ button#dark {
   --op-color:1;
   --sv-color:#ede5fb;
   --rad-color:linear-gradient(45deg, #4628dd, #ab63e5);
+  --progress-color:linear-gradient(80deg, #2a18db, #b167e5, #e91e63ab,#f44336db)
 }
 .dark{
   --h1-color:#e6e6e6;
@@ -848,4 +874,5 @@ button#dark {
   --op-color:.1;
   --sv-color:#ede5fb;
   --rad-color:linear-gradient(56deg, #5f18dd, #340d3b);
+  --progress-color:linear-gradient(80deg, #0e065f, #491370, #300b72,#110c0c);
 }
