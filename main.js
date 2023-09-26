@@ -49,3 +49,20 @@ let body = document.querySelector("body");
   dark.addEventListener('click', function(){
   body.classList.toggle("dark");
 })
+
+let myName = "Developer";
+let index = 1;
+
+function writeText() {
+  document.getElementById("hone").textContent = myName.slice(0,index);
+  index++
+
+if (index > myName.length) {
+  index = 1;
+}
+
+}
+
+setInterval(function () {
+  writeText();
+}, 415)
