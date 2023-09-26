@@ -60,9 +60,46 @@ function writeText() {
 if (index > myName.length) {
   index = 1;
 }
-
 }
 
 setInterval(function () {
   writeText();
 }, 415)
+
+let myWork = "front-end";
+index2 = 1;
+
+function writeWork() {
+  document.getElementById("span").textContent = myWork.slice(0,index2);
+  index2++
+
+  if (index2 > myWork.length) {
+    index2 = 1;
+  }
+}
+
+setInterval(function () {
+  writeWork();
+},411 )
+
+document.oncontextmenu = function() {
+return false;
+};
+document.onkeydown = function(e) {
+if (e.keyCode == 123) {
+return false;
+}
+if (e.ctrlKey && e.shiftKey && e.keyCode ==  I .charCodeAt(0)) {
+return false;
+}
+if (e.ctrlKey && e.shiftKey && e.keyCode ==  J .charCodeAt(0)) {
+return false;
+}
+if (e.ctrlKey && e.keyCode ==  U .charCodeAt(0)) {
+return false;
+}
+if (e.ctrlKey && e.shiftKey && e.keyCode ==  C .charCodeAt(0)) {
+return false;
+}
+
+}

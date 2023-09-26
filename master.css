@@ -28,10 +28,29 @@ nav {
     padding: 30px;
 }
 .hero{
+  position: relative;
+  /*
   background-image: url("IMG_20230924_012008.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover
+}
+.hero::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+   height: 40%;
+  background: #ede5fb;
+  top: 42%;
+  z-index: -1;
+  border-radius:19% 81% 34% 66% / 65% 59% 41% 35%;
+}
+*/
+}
+.hero svg{
+  position: absolute;
+  top: 50%;
+  z-index: -8
 }
 .links a {
     text-decoration: none;
@@ -85,6 +104,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   margin-top: 79px;
+  flex-direction: row-reverse;
 }
 .landing .image img {
     margin-left: 56px;
@@ -95,7 +115,7 @@ nav {
 .landing p {
     font-weight: 600;
     text-transform: uppercase;
-    color: #333;
+    color: var(--p-color);
     font-size: 15px;
     letter-spacing: 1px;
 }
@@ -114,9 +134,10 @@ nav {
     display: block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #2f2a62;
+
+  }
+    /*
     animation: text 4s steps(16) infinite;
-}
 @keyframes text {
   to{
     width: 255px;
@@ -126,6 +147,7 @@ nav {
     width:0;
   }
 }
+*/
 .landing h4 {
     color: var(--h1-color);
     text-transform: capitalize;
@@ -156,7 +178,7 @@ nav {
     border: 2px solid transparent;
     padding: 7px 21px;
     border-radius: 24px;
-    margin-top: 14px;
+    margin-top: 39px;
     color: #fff;
     font-size: 16px;
     text-transform: capitalize;
@@ -168,16 +190,17 @@ nav {
 }
 .landing button:hover{
   border-color: #b167e5;
-  background-image:  unset;
-  color: #444;
+  background:  transparent;
+  color: var(--h4-color);
 }
 .landing .image {
     width: 42%;
     margin-right: 64px;
     height: 100%;
     border-radius: 19% 81% 34% 66% / 65% 59% 41% 35%;
-    background-image: linear-gradient(45deg, #4628dd, #ab63e5);
+    background-image: var(--rad-color);
     animation: radus  8s infinite 2s ease-in-out alternate;
+    transition: 0.5s;
 }
 @keyframes radus {
   0%{
@@ -217,9 +240,10 @@ nav {
     margin-left: 0 ;
 
   }
-  .landing .contaner{
-    flex-direction: column-reverse;
-        flex-wrap: wrap;
+  .landing .contaner {
+      flex-direction: unset;
+      flex-wrap: wrap;
+      padding: 30px;
   }
   .landing .image{
     margin-bottom: 30px;
@@ -374,7 +398,7 @@ font-size: 20px;
 }
 .services .contaner {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
     gap: 37px;
     align-items: center;
     width: 90%;
@@ -799,17 +823,20 @@ button#dark {
   --btn-color:linear-gradient(10deg, #2a18db, #b167e5);
   --links-color:#ede5fb;
   --lab-color:#535353d9;
+  --op-color:1;
+  --sv-color:#ede5fb;
+  --rad-color:linear-gradient(45deg, #4628dd, #ab63e5);
 }
 .dark{
-  --h1-color:#222;
+  --h1-color:#e6e6e6;
   --bk-color:#101010;
   --p-color:#bebebe;
   --h2-color:#ebebeb;
   --a-color:#dcdcdc;
   --a-2-color:#eee;
   --h4-color:#d1cccc;
-  --fo-color:linear-gradient(180deg, #0e065f, #4e0880, #a80a40ab,#9d1309db);
-  --path-color:#0e065f;
+  --fo-color:linear-gradient(80deg, #0e065f, #491370, #300b72,#110c0c);
+  --path-color:#491370;
   --light-color:1px 1px 11px #1e1e1e;
   --active-color:#d6beff;
   --btn-color:linear-gradient(10deg, #0e065f, #520c82);
@@ -818,5 +845,7 @@ button#dark {
   --bch-color:#000000c7;
   --padd-color:3px 13px;
   --lab-color:#e1e1e1d9;
-
+  --op-color:.1;
+  --sv-color:#ede5fb;
+  --rad-color:linear-gradient(56deg, #5f18dd, #340d3b);
 }
